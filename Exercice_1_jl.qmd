@@ -1,0 +1,31 @@
+---
+title: "Exercise week one"
+author: "Justine Leclerc"
+format: html
+editor: visual
+---
+
+# Exercise Week 1 Part B
+
+## R Code
+
+```{r}
+sample <- rlnorm(100,5,0.25)
+library(ggplot2)
+ggplot(data.frame(sample), aes(sample)) + geom_histogram(bins=100)
+ggplot(data.frame(log(sample)), aes(log(sample))) + geom_histogram(bins=100)
+ggplot(data.frame(sample), aes(sample,sample)) + geom_violin()
+```
+
+## Comments about the results
+
+I first generated a random sample of 100 values, according to a log-normal distribution with **mean 5 and variance 0.25**. To build histograms and violin plots, I then **installed the package ggplot2**.
+
+## Data Summary
+
+```{r}
+summary(data.frame(sample))
+sd(sample)
+```
+
+We can then conclude that the mean of our sample is *146.74*, and its standard deviation is of *36.52785*.
